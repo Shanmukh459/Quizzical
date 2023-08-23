@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import StartScreen from './StartScreen.jsx'
-import QuizScreen from './QuizScreen.jsx'
+import ShowScreen from './ShowScreen.jsx'
 
 function App() {
-  const [startScreen, setStartScreen] = useState(false)
+  
   return (
-    startScreen ? <StartScreen /> : <QuizScreen />
+    <ShowScreen/>
   )
 }
 
