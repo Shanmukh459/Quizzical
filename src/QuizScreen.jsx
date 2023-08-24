@@ -9,16 +9,13 @@ export default function QuizScreen() {
             .then(res => res.json())
             .then(data => setQuizData(data.results))
     }, [])
-    console.log(quizData)
+
     const questionElements = quizData.map((item) => {
         return (
-            <>
-                <p>{item.question}</p>
-                <p>{item.incorrect_answers}</p>
-            </>
+            <DisplayQuestion key={item.question} item={item}/>
         )
     })
-    console.log(questionElements)
+    
     return (
         <div>
             {questionElements}
