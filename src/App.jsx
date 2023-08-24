@@ -1,10 +1,14 @@
-import ShowScreen from './ShowScreen.jsx'
+import { useState } from 'react'
+import StartScreen from "./StartScreen"
+import QuizScreen from "./QuizScreen"
 
 function App() {
-  
-  return (
-    <ShowScreen/>
-  )
+  const [startScreen, setStartScreen] = useState(true)
+
+    function handleClick() {
+        setStartScreen(prev => !prev)
+    }
+    return startScreen ? <StartScreen handleClick={handleClick}/> : <QuizScreen />
 }
 
 export default App
