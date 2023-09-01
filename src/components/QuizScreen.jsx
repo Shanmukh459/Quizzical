@@ -1,6 +1,7 @@
 import React from "react"
 import DisplayQuestion from "./DisplayQuestion"
 import { nanoid } from "nanoid"
+import "../styles/quizScreen.css"
 
 export default function QuizScreen(props) {
     const [isGameOver, setIsGameOver] = React.useState(false)
@@ -57,16 +58,17 @@ export default function QuizScreen(props) {
     })
 
     return (
-        <>
-        <div>
-            {questionElements}
-        </div>
-        <div>
-            {isGameOver && <p>Your score is {score}/5</p> }
-        </div>
-        <button onClick={handleSubmission}>{isGameOver ? "New Game" : "Check Answers"}</button>
+        <section>
+            <div>
+                {questionElements}
+            </div>
+            <div className="score-submit-sec">
+                {isGameOver && <h3>Your scored {score}/5 correct answers</h3> }
+                <button className="submission-btn" onClick={handleSubmission}>{isGameOver ? "Play again" : "Check Answers"}</button>
+            </div>
+            
 
-        </>
+        </section>
         
     )
 }

@@ -1,0 +1,40 @@
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.option-btn {
+    color: #293264;
+    border: 0.8px solid #4D5B9E;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: #F5F7FB;
+    padding: 6px 14px;
+    margin-right: 14px;
+    cursor: pointer;
+    word-wrap: nowrap;
+    min-width: 90px;
+  }
+
+.score-submit-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 800;
+
+}
+
+.submission-btn {
+    font-size: 13px;
+    background: #4D5B9E;
+    border-radius: 10px;
+    color: #F5F7FB;
+    padding: 12px 24px;
+    border: none;
+    min-width: 120px;
+  }
