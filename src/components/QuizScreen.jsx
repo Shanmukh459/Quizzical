@@ -2,7 +2,7 @@ import React from "react"
 import DisplayQuestion from "./DisplayQuestion"
 import { nanoid } from "nanoid"
 
-export default function QuizScreen() {
+export default function QuizScreen(props) {
     const [isGameOver, setIsGameOver] = React.useState(false)
     const [quizData, setQuizData] = React.useState([])
     const [score, setScore] = React.useState(0)
@@ -17,7 +17,7 @@ export default function QuizScreen() {
                     id: nanoid()
                 }
             })))
-    }, [isGameOver])
+    }, [])
 
     function handleSelectAnswer(id, option) {
         setQuizData(prevQuestions => (
@@ -36,10 +36,12 @@ export default function QuizScreen() {
     function handleSubmission() {
         if (!isGameOver) {
             setIsGameOver(true)
+
         }
         else {
             setIsGameOver(false)
             setScore(0)
+            props.handleNewGame()
         }
         
     }

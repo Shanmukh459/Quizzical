@@ -8,7 +8,7 @@ function App() {
     function handleClick() {
         setStartScreen(prev => !prev)
     }
-    return startScreen ? <StartScreen handleClick={handleClick}/> : <QuizScreen />
+    return startScreen ? <StartScreen handleClick={handleClick}/> : <QuizScreen handleNewGame={handleClick}/>
 }
 
 export default App
