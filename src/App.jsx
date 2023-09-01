@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import StartScreen from "./StartScreen"
-import QuizScreen from "./QuizScreen"
+import StartScreen from "./components/StartScreen"
+import QuizScreen from "./components/QuizScreen"
 
 function App() {
   const [startScreen, setStartScreen] = useState(true)

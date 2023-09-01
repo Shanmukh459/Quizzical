@@ -9,16 +9,17 @@ export default function DisplayQuestion(props) {
     
     options.length < 4 && options.splice((options.length+1) * Math.random() | 0, 0, correctOption)
 
-
     const optionsElements = options.map(option => {
-        const incorrectAnswerClassName = `
-        ${props.item.selectedAnswer === option ? "option-btn-selected" : "option-btn"}`
+        // const incorrectAnswerClassName = `
+        // ${props.item.selectedAnswer === option ? "option-btn-selected" : "option-btn"}`
+
         return(
             <button 
-                onClick={() => props.handleClick(props.item.id, option)} 
+                onClick={() => props.handleSelectAnswer(props.item.id, option)} 
                 key={nanoid()}
-                className={incorrectAnswerClassName}
-            >{he.decode(option)}</button>
+                className="option-btn"
+            >
+            {he.decode(option)}</button>
         )
         
     })
