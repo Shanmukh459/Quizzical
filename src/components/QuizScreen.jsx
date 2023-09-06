@@ -15,7 +15,7 @@ export default function QuizScreen(props) {
                 return {
                     ...question,
                     selectedAnswer: "",
-                    id: nanoid()
+                    id: nanoid(),
                 }
             })))
     }, [])
@@ -37,7 +37,12 @@ export default function QuizScreen(props) {
     function handleSubmission() {
         if (!isGameOver) {
             setIsGameOver(true)
-
+            // setQuizData(prevData => {
+            //     prevData.map(question => {
+            //         console.log(question)
+            //         return {...question, showAnswer:true}
+            //     })
+            // })
         }
         else {
             setIsGameOver(false)

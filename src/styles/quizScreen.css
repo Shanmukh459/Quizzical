@@ -18,6 +18,10 @@ section {
     min-width: 90px;
   }
 
+.option-btn-select {
+    background-color: #D6DBF5;
+}
+
 .score-submit-sec {
     display: flex;
     flex-direction: row;
@@ -37,4 +41,6 @@ section {
     padding: 12px 24px;
     border: none;
     min-width: 120px;
+    cursor: pointer;
+    margin-top: 20px;
   }
