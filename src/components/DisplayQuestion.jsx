@@ -11,27 +11,15 @@ export default function DisplayQuestion(props) {
     const optionsElements = options.map(option => {
 
         let classNames = `${props.item.selectedAnswer === option && "option-btn-select"}`
-        // if (props.item.showAnswer && props.item.selectedAnswer === option){
-        //     if (props.item.incorrect_answers.include(option)){
-        //         classNames = classNames.concat(" option-btn-incorrect")
-        //     }
-        //     else {
-        //         classNames = classNames.concat(" option-btn-correct")
-        //     }
-        // }
-         
-        //if it is incorrect option give
-            //give me classes related to incorrect options
-        //else
-            //give me classNames related to correct options
-
-        // const incorrectAnsClassNames = props.item.incorrect_answers.map(answer => {
-        // return (
-        //     `${props.item.selectedAnswer === answer && "option-btn-select"} ${(props.item.showAns && props.item.selectedAns === answer) && "option-btn-incorrect"}`
-        //     )
-        // })
-
-        // const correctAnsClassNames = `${props.item.selectedAnswer === option && "option-btn-select"} ${(props.item.showAns && props.item.selectedAns === props.item.correct_answer) && "option-btn-correct"}`
+        
+        if (props.item.showAnswer) {
+            if (correctOption === option) {
+                classNames = classNames.concat(" option-btn-correct")
+            }
+            else if (props.item.selectedAnswer === option && props.item.incorrect_answers.includes(option)) {
+                classNames = classNames.concat(" option-btn-incorrect")
+            }
+        }
 
         return(
             <button 

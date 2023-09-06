@@ -16,10 +16,20 @@ section {
     cursor: pointer;
     word-wrap: nowrap;
     min-width: 90px;
+    
   }
 
 .option-btn-select {
     background-color: #D6DBF5;
+}
+
+.option-btn-incorrect {
+    background-color: #F8BCBC;
+    opacity: 0.6;
+}
+
+.option-btn-correct {
+    background-color: #94D7A2;
 }
 
 .score-submit-sec {
@@ -44,3 +54,4 @@ section {
     cursor: pointer;
     margin-top: 20px;
   }
+
