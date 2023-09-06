@@ -4,11 +4,22 @@ import QuizScreen from "./components/QuizScreen"
 
 function App() {
   const [startScreen, setStartScreen] = useState(true)
+  const [inputs, setInputs] = useState({
+    category: "",
+    difficulty: ""
+  })
 
-    function handleClick() {
-        setStartScreen(prev => !prev)
-    }
-    return startScreen ? <StartScreen handleClick={handleClick}/> : <QuizScreen handleNewGame={handleClick}/>
+  function handleInputChange(event) {
+    const {name, value} = event.target
+    setInputs(prevInputs => ({...prevInputs, [name]: value}))
+  }
+
+  function handleClick(event) {
+    setStartScreen(prev => !prev)
+  }
+  return startScreen ? 
+    <StartScreen handleClick={handleClick} handleInputChange={handleInputChange} inputs={inputs}/> : 
+    <QuizScreen handleNewGame={handleClick} inputs={inputs}/>
 }
 
 export default App

@@ -9,7 +9,7 @@ export default function QuizScreen(props) {
     const [score, setScore] = React.useState(0)
 
     React.useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+        fetch(`https://opentdb.com/api.php?amount=5&category=${props.inputs.category}&difficulty=${props.inputs.difficulty}&type=multiple`)
             .then(res => res.json())
             .then(data => setQuizData(data.results.map(question => {
                 return {
