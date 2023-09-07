@@ -28,6 +28,10 @@ function App() {
         <StartScreen handleClick={handleClick} handleInputChange={handleInputChange} inputs={inputs}/> : 
         <QuizScreen handleNewGame={handleClick} inputs={inputs}/>}
       <img className="shape-bottom" src={shapeBottom}></img>
+      <footer>
+        Developed by &nbsp;
+        <a href="https://github.com/Shanmukh459/">Shanmukh Krishna</a>
+      </footer>
     </>
     
 
