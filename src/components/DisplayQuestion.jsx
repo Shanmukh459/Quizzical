@@ -25,6 +25,9 @@ export default function DisplayQuestion(props) {
             else if (props.item.selectedAnswer === option && props.item.incorrect_answers.includes(option)) {
                 classNames = classNames.concat(" option-btn-incorrect")
             }
+            else {
+                classNames = classNames.concat(" option-incorrect")
+            }
         }
 
         return(
@@ -40,8 +43,9 @@ export default function DisplayQuestion(props) {
 
     return (
         <>
-            <p>{he.decode(props.item.question)}</p>
+            <h3>{he.decode(props.item.question)}</h3>
             {optionsElements}
+            <hr></hr>
         </>
         
     )
