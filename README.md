@@ -1,10 +1,10 @@
 #🧠🥶 Quizzical
 ## A game that tests your brain
 
-#### This is a quiz game web application build in react. 
-#### The questions in this quiz are dynamically loaded using [Open Trivia Database API](https://opentdb.com/api_config.php). 
-#### Users will have the options to choose the questions depending on their interests like category, type and difficulty level.
-#### This application is made a part of [React course by Bob Ziroll](https://scrimba.com/learn/learnreact) on Scrimba and is built from scratch.
+*** This is a quiz game web application build in react. 
+*** The questions in this quiz are dynamically loaded using [Open Trivia Database API](https://opentdb.com/api_config.php). 
+*** Users will have the options to choose the questions depending on their interests like category, type and difficulty level.
+*** This application is made a part of [React course by Bob Ziroll](https://scrimba.com/learn/learnreact) on Scrimba and is built from scratch.
 
 
 ⚒🛠️ Technologies used:
