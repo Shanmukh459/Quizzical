@@ -9,7 +9,7 @@ export default function QuizScreen(props) {
     const [score, setScore] = React.useState(0)
 
     React.useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=5&category=${props.inputs.category}&difficulty=${props.inputs.difficulty}&type=multiple`)
+        fetch(`https://opentdb.com/api.php?amount=5&category=${props.inputs.category}&difficulty=${props.inputs.difficulty}&type=${props.inputs.type}`)
             .then(res => res.json())
             .then(data => setQuizData(data.results.map(question => {
                 return {
@@ -64,7 +64,7 @@ export default function QuizScreen(props) {
                 {questionElements}
             </div>
             <div className="score-submit-sec">
-                {isGameOver && <h3>Your scored {score}/5 correct answers</h3> }
+                {isGameOver && <h3>Your scored {score}/5 correct answers</h3>}
                 <button className="submission-btn" onClick={handleSubmission}>{isGameOver ? "Play again" : "Check Answers"}</button>
             </div>
             

@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import StartScreen from "./components/StartScreen"
 import QuizScreen from "./components/QuizScreen"
+import shapeBottom from "./assets/shape-2.png"
+import shapeTop from "./assets/shape-1.png"
+import "./styles/app.css"
 
 function App() {
   const [startScreen, setStartScreen] = useState(true)
   const [inputs, setInputs] = useState({
     category: "",
-    difficulty: ""
+    difficulty: "",
+    type: ""
   })
 
   function handleInputChange(event) {
@@ -17,9 +21,17 @@ function App() {
   function handleClick(event) {
     setStartScreen(prev => !prev)
   }
-  return startScreen ? 
-    <StartScreen handleClick={handleClick} handleInputChange={handleInputChange} inputs={inputs}/> : 
-    <QuizScreen handleNewGame={handleClick} inputs={inputs}/>
+  return (
+    <>
+      <img className="shape-top" src={shapeTop}></img>
+      {startScreen ? 
+        <StartScreen handleClick={handleClick} handleInputChange={handleInputChange} inputs={inputs}/> : 
+        <QuizScreen handleNewGame={handleClick} inputs={inputs}/>}
+      <img className="shape-bottom" src={shapeBottom}></img>
+    </>
+    
+
+  )
 }
 
 export default App

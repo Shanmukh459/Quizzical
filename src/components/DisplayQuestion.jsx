@@ -6,7 +6,13 @@ export default function DisplayQuestion(props) {
     let options = props.item.incorrect_answers
     const correctOption = props.item.correct_answer
     
-    options.length < 4 && options.splice((options.length+1) * Math.random() | 0, 0, correctOption)
+    if (options.includes("True") || options.includes("False")){
+        options.length < 2 && options.splice((options.length+1) * Math.random() | 0, 0, correctOption)
+        options.sort().reverse()
+    } 
+    else {
+        options.length < 4 && options.splice((options.length+1) * Math.random() | 0, 0, correctOption)
+    }
 
     const optionsElements = options.map(option => {
 

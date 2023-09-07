@@ -1,11 +1,6 @@
 import React from "react"
 
 export default function StartScreen(props) {
-    const [inputs, setInputs] = React.useState({
-        category: "",
-        difficulty: ""
-    })
-
     return (
         <main>
             <p className="title-txt">Quizzical</p>
@@ -60,6 +55,21 @@ export default function StartScreen(props) {
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
                     </select> 
+                </div>
+
+                <div className="type-div">
+                    <label htmlFor="type">Select Type:</label>
+                    <select
+                        id="type"
+                        name="type"
+                        value={props.inputs.type}
+                        onChange={props.handleInputChange}
+                    >
+                        <option value="">Any Type</option>
+                        <option value="multiple">Multiple Choice</option>
+                        <option value="boolean">True / False</option>
+
+                    </select>
                 </div>
                 
             </div>
