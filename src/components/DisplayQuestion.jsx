@@ -2,9 +2,9 @@ import React from "react"
 import he from "he"
 import { nanoid } from 'nanoid'
 
-export default function DisplayQuestion(props) {
-    let options = props.item.incorrect_answers
-    const correctOption = props.item.correct_answer
+export default function DisplayQuestion({handleSelectAnswer, incorrect_answers, correct_answer, selectedAnswer, showAnswer, id, question, ...rest}) {
+    let options = incorrect_answers
+    const correctOption = correct_answer
     
     if (options.includes("True") || options.includes("False")){
         options.length < 2 && options.splice((options.length+1) * Math.random() | 0, 0, correctOption)
@@ -16,13 +16,13 @@ export default function DisplayQuestion(props) {
 
     const optionsElements = options.map(option => {
 
-        let classNames = `${props.item.selectedAnswer === option && "option-btn-select"}`
+        let classNames = `${selectedAnswer === option && "option-btn-select"}`
         
-        if (props.item.showAnswer) {
+        if (showAnswer) {
             if (correctOption === option) {
                 classNames = classNames.concat(" option-btn-correct")
             }
-            else if (props.item.selectedAnswer === option && props.item.incorrect_answers.includes(option)) {
+            else if (selectedAnswer === option && incorrect_answers.includes(option)) {
                 classNames = classNames.concat(" option-btn-incorrect")
             }
             else {
@@ -32,7 +32,7 @@ export default function DisplayQuestion(props) {
 
         return(
             <button 
-                onClick={() => props.handleSelectAnswer(props.item.id, option)} 
+                onClick={() => handleSelectAnswer(id, option)} 
                 key={nanoid()}
                 className={`option-btn ${classNames}`}
             >
@@ -43,7 +43,7 @@ export default function DisplayQuestion(props) {
 
     return (
         <>
-            <h3>{he.decode(props.item.question)}</h3>
+            <h3>{he.decode(question)}</h3>
             {optionsElements}
             <hr></hr>
         </>

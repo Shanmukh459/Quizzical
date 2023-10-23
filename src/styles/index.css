@@ -3,6 +3,7 @@ body {
   background-color: #F5F7FB;
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 
 .start-btn {

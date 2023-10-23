@@ -3,11 +3,14 @@
 
 **_This is a quiz game web application build in react._**
 
+**_Quizzical is deployed in cloud and can be accessed [here](https://quizzicalshanmukh.vercel.app/)._**
+
+**_This application is a personal project built from scratch to challenge my frontend development skills._**
+
 **_The questions in this quiz are dynamically loaded using [Open Trivia Database API](https://opentdb.com/api_config.php)._**
 
 **_Users will have the options to choose the questions depending on their interests like category, type and difficulty level._** 
 
-**_This application is made a part of [React course by Bob Ziroll](https://scrimba.com/learn/learnreact) on Scrimba and is built from scratch._**
 
 
 ⚒🛠️ Technologies used:

@@ -52,8 +52,13 @@ export default function QuizScreen(props) {
         return (
             <DisplayQuestion 
                 key={item.question} 
-                item={item} 
                 handleSelectAnswer={handleSelectAnswer}
+                incorrect_answers = {item.incorrect_answers}
+                correct_answer = {item.correct_answer}
+                selectedAnswer = {item.selectedAnswer}
+                showAnswer = {item.showAnswer}
+                id = {item.id}
+                question = {item.question}
             />
         )
     })
