@@ -16,4 +16,16 @@ footer {
     bottom: 10px;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-wrap: nowrap;
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 10px;
+    }
+
+    .shape-bottom, .shape-top {
+        height: 50px;
+    }
+
 }
