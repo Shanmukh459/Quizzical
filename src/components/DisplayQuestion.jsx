@@ -42,11 +42,11 @@ export default function DisplayQuestion({handleSelectAnswer, incorrect_answers, 
     })
 
     return (
-        <>
-            <h3>{he.decode(question)}</h3>
+        <div>
+            <h3 className="question">{he.decode(question)}</h3>
             {optionsElements}
             <hr></hr>
-        </>
+        </div>
         
     )
 }
