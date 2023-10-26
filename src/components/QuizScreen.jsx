@@ -9,7 +9,9 @@ export default function QuizScreen(props) {
     const [quizData, setQuizData] = React.useState([])
     const [score, setScore] = React.useState(0)
     const [index, setIndex] = React.useState(0)
-    const mobileScreen = useMediaQuery('(max-width: 450px');
+    const mobileScreen = useMediaQuery('(max-width: 460px');
+    let nextBtnClasses = React.useRef("btn-next")
+    let prevBtnClasses = React.useRef("btn-prev btn-disable")
 
     React.useEffect(() => {
         fetch(`https://opentdb.com/api.php?amount=5&category=${props.inputs.category}&difficulty=${props.inputs.difficulty}&type=${props.inputs.type}`)
@@ -52,12 +54,17 @@ export default function QuizScreen(props) {
     }
 
     function prevQuestion() {
+        prevBtnClasses.current = (index == 1 || index == 0) ? "btn-prev btn-disable" : "btn-prev"  
+        nextBtnClasses.current = "btn-next"
         setIndex(prevIndex => {
             return prevIndex > 0 ? prevIndex -= 1 : prevIndex
-        })    
+        })  
     }
 
     function nextQuestion() {
+        prevBtnClasses.current = "btn-prev"
+        nextBtnClasses.current = (index == 3 || index == 4) ? "btn-next btn-disable" : "btn-next"
+        console.log(nextBtnClasses.current)
         setIndex(prevIndex => {
             return prevIndex < 4 ? prevIndex += 1 : prevIndex
         })
@@ -76,17 +83,21 @@ export default function QuizScreen(props) {
             />
         )
     })
-    console.log(index)
+
     if (mobileScreen) {
         return (
-            <section>
-            {questionElements[index]}
-            <button onClick={prevQuestion}>Previous</button>
-            <button onClick={nextQuestion}>Next</button>
-            <div className="score-submit-sec">
-                 {isGameOver && <h3>Your scored {score}/5 correct answers</h3>}
-                 <button className="submission-btn" onClick={handleSubmission}>{isGameOver ? "Play again" : "Check Answers"}</button>
-             </div>
+            <section className="mobile-view">
+                <div>
+                    {questionElements[index]}
+                </div>
+                <div className="btn-container">
+                    <button className={prevBtnClasses.current} onClick={prevQuestion}>Previous</button>
+                    <button className={nextBtnClasses.current} onClick={nextQuestion}>Next</button>
+                </div>
+                <div className="score-submit-mob">
+                    {isGameOver && <h3>You scored {score}/5 correct answers</h3>}
+                    <button className="submission-btn" onClick={handleSubmission}>{isGameOver ? "Play again" : "Check Answers"}</button>
+                </div>
          </section>
         )
     }

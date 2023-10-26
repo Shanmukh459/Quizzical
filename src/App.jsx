@@ -22,17 +22,17 @@ function App() {
     setStartScreen(prev => !prev)
   }
   return (
-    <>
+    <section className={!startScreen && 'app-container'}>
       <img className="shape-top" src={shapeTop}></img>
       {startScreen ? 
         <StartScreen handleClick={handleClick} handleInputChange={handleInputChange} inputs={inputs}/> : 
         <QuizScreen handleNewGame={handleClick} inputs={inputs}/>}
       <img className="shape-bottom" src={shapeBottom}></img>
-      <footer>
+      <footer className={startScreen && "footer-container"}>
         Developed by &nbsp;
         <a href="https://github.com/Shanmukh459/">Shanmukh Krishna</a>
       </footer>
-    </>
+    </section>
     
 
   )

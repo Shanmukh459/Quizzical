@@ -1,8 +1,12 @@
 section {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 .option-btn {
     color: #293264;
@@ -16,7 +20,7 @@ section {
     cursor: pointer;
     word-wrap: nowrap;
     min-width: 90px;
-    
+    margin-bottom: 4px;
   }
 
 .option-btn-select {
@@ -58,6 +62,7 @@ section {
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 40px;
+    text-wrap: nowrap;
 }
 
 hr {
@@ -65,4 +70,45 @@ hr {
     opacity: 0.6;
     font-weight: 100;
 }
+
+.mobile-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-prev, .btn-next {
+    background-color: #ff595e;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+
+}
+
+.btn-disable {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.score-submit-mob {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
 
