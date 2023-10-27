@@ -9,7 +9,7 @@ export default function QuizScreen(props) {
     const [quizData, setQuizData] = React.useState([])
     const [score, setScore] = React.useState(0)
     const [index, setIndex] = React.useState(0)
-    const mobileScreen = useMediaQuery('(max-width: 460px');
+    const mobileScreen = useMediaQuery('(max-width: 550px');
     let nextBtnClasses = React.useRef("btn-next")
     let prevBtnClasses = React.useRef("btn-prev btn-disable")
 

@@ -33,7 +33,7 @@ footer {
     transform: translate(-50%,-50%);
 }
 
-@media (max-width: 460px) {
+@media (max-width: 550px) {
     .app-container {
         height: 100vh;
     }
